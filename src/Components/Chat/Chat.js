@@ -51,7 +51,7 @@ const TeamChat = () => {
 
     try {
       const response = await axios({
-        url:'http://localhost:4000/api/v1/messages',
+        url:'http://localhost:4042/api/v1/messages',
         method:'POST',
         data:{
           message:messageInputValue,
@@ -84,7 +84,7 @@ const TeamChat = () => {
 
     try {
       const response = await axios({
-        url:'http://localhost:4000/api/v1/messages',
+        url:'http://localhost:4042/api/v1/messages',
         method:'GET',
         headers:{
           "Content-Type":"application/json"

@@ -17,7 +17,7 @@ const Auth = () => {
 
     try {
       const response = await axios({
-        url:"http://localhost:4000/api/v1/users/signin",
+        url:"http://localhost:4042/api/v1/users/signin",
         method:'POST',
         data:formData,
         headers:{
