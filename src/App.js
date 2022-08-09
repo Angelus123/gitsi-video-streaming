@@ -1,24 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react"
+import Chat from "./Components/Chat/Chat"
+import Auth from "./Components/Auth/Auth"
+import JitsiMeet from "./Components/JitsiMeet/Meet"
+
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+} from "react-router-dom";
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    
+    <BrowserRouter>
+    <Routes>
+        <Route path="/chat" element={<Chat/>} />
+        <Route path="/" element={<Auth/>} />
+        <Route path="/meet" element={<JitsiMeet/>} />
+    </Routes>
+  </BrowserRouter>
+  
   );
 }
 
