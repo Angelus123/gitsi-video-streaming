@@ -4,8 +4,7 @@ import "./jitsi.css";
 
 const MeetApp = () => {
   const apiRef = useRef();
-  const [logItems, updateLog] = useState([]);
-  const [showNew, toggleShowNew] = useState(false);
+  const [updateLog] = useState([]);
   const [knockingParticipants, updateKnockingParticipants] = useState([]);
 
   const printEventOutput = (payload) => {
@@ -37,19 +36,6 @@ const MeetApp = () => {
       ...participants,
       payload?.participant,
     ]);
-  };
-
-  const resolveKnockingParticipants = (condition) => {
-    knockingParticipants.forEach((participant) => {
-      apiRef.current.executeCommand(
-        "answerKnockingParticipant",
-        participant?.id,
-        condition(participant)
-      );
-      updateKnockingParticipants((participants) =>
-        participants.filter((item) => item.id === participant.id)
-      );
-    });
   };
 
   const handleJitsiIFrameRef1 = (iframeRef) => {

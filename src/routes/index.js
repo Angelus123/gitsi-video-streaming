@@ -1,12 +1,10 @@
 import {BrowserRouter,Routes,Route} from "react-router-dom"
-import Chat from "./../Components/Chat/Chat"
-import Auth from "./../Components/Auth/Auth"
+import Meet from "./../Components/JitsiMeet/Meet"
 
 const AppRoutes = ()=>{
   <BrowserRouter>
   <Routes>
-    <Route path="/chat" element={<Chat/>}/>
-    <Route path="/" element={<Auth/>}/>
+    <Route path="/meet" element={<Meet/>}/>
   </Routes>
   </BrowserRouter>
 }
